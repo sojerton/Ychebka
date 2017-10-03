@@ -1,2 +1,2 @@
-# first_repository
+# hello-world
 first prog
