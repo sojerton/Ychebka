@@ -2,6 +2,6 @@
 using namespace std;
 int main()
 {
-	cout << "Артем М. ул. Казанское ш. 12б \n";
+	cout << "Артем М., Нижний Новгород \n";
 	return 0;
 }
