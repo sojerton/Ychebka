@@ -10,13 +10,13 @@ int main()
 {
 	setlocale(LC_ALL, "Russian");
 	int growthFoot, growthInch, weightPounds;
-	cout << "¬ведите ваш рост в футах: __\b\b";
+	cout << "Enter your growth in foots: __\b\b";
 	cin >> growthFoot;
-	cout << "¬ведите ваш рост в дюймах: __\b\b";
+	cout << "Enter your growth in inch: __\b\b";
 	cin >> growthInch;
-	cout << "¬ведите ваш вес в фунтах: __\b\b";
+	cout << "Enter your weight in pounds: __\b\b";
 	cin >> weightPounds;
-	cout << "¬аш индекс массы тела (»ћ“): " << pow((growthFoot * ft + growthInch)*mtr, 2) / (weightPounds / kg) << endl;
+	cout << "Your body mass index (BMI): " << pow((growthFoot * ft + growthInch)*mtr, 2) / (weightPounds / kg) << endl;
 	system("pause");
 	return 0;
 }
