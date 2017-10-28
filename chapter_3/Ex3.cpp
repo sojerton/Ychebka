@@ -7,11 +7,11 @@ int main()
 {
 	setlocale(LC_ALL, "Russian");
 	float km, liter;
-	cout << "Введите расстояние (в километрах): ";
+	cout << "Enter the distance (in km): ";
 	cin >> km;
-	cout << "Введите расход топлива (в литрах): ";
+	cout << "Enter the fuel consumption (in liters): ";
 	cin >> liter;
-	cout << "Расход топлива на 100 километров: " << (liter * 100) / km << endl;
+	cout << "Fuel consumption per 100 km: " << (liter * 100) / km << endl;
 	system("pause");
 	return 0;
 }
