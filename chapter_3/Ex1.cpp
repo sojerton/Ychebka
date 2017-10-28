@@ -7,9 +7,9 @@ int main()
 {
 	setlocale(LC_ALL, "Russian");
 	int growth;
-	cout << "Введите ваш рост: ___\b\b\b";
+	cout << "Enter your growth: ___\b\b\b";
 	cin >> growth;
-	cout << "Ваш рост: " << growth / ft << " фут(ов) и " << (growth % ft) << " дюйм(ов)\n";
+	cout << "Your growth: " << growth / ft << " foot and " << (growth % ft) << " inch\n";
 	system("pause");
 	return 0;
 }
