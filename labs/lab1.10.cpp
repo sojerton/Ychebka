@@ -1,44 +1,36 @@
-#include <stdio.h>
 #include <cmath>
 #include <iostream>
-using namespace std;
 
+using namespace std;
 
 int main()
 {
-setlocale(LC_ALL, "Russian");
-double a,b,c,d,F,dX,g,x,Xn,Xk;
+    setlocale(LC_ALL, "Russian");
+    double a,b,c,dX,Xn,Xk;
 cout << "zadaite minim-e zna4enie, vvedite Xn= "; cin >> Xn;;
 cout << "zadaite maxim-e zna4enie, vvedite Xk= "; cin >> Xk;
 cout << "zadaite shag (dX) = "; cin >> dX;
 cout << "vvedite a="; cin >> a;
 cout << "vvedite b="; cin >> b;
 cout << "vvedite c="; cin >> c;
-    for(x=Xn;x<=Xk;x=x+dX)
-    {
-        int ac=(int)a;
-        int bc=(int)b;
-        int cc=(int)c;
-        if ((x<3)&&(b!=0))
-            if(!(ac||bc)&&(ac^cc)!=0)
-                cout << (F=pow(a*x,2)-b*x+c) << endl;
-            else
-                cout<<"zna4enie F1= "<<int (F=((a*x)^2)-b*x+c)<<endl;
-
-        else
-            if((x>3)&&(b==0))
-                if(!(ac||bc)&&(ac^cc)!=0)
-                    cout << (F=(x-a)/(x-c)) << endl;
-                else
-                    cout << "zna4enie F2= " << int (F=(x-a)/(x-c))<<endl;
-
-            else
-                if(!(ac||bc)&&(ac^cc)!=0)
-                    cout << (F=x/c) << endl;
-                else
-                    cout << "zna4enie F3= "<<int (F=x/c)<<endl;
-
+    if (!( int(a) | int(b)) && ( int(a) ^ int(c)) !=0) {
+        for( double x=Xn;x<=Xk;x=x+dX){
+            double F;
+            if (x<3 && b!=0) F=pow(a*x,2)-b*x+c;
+            else if (x>3 && b==0) F=(x-a)/(x-c);
+            else F=x/c;
+            cout << "x = " << x << "\tf = " << F << endl;
+        }
     }
-
+    else{
+        for(double x = Xn; x <= Xk; x += dX) {
+            int F;
+            if (x<3 && b!=0) F=pow(a*x,2)-b*x+c;
+            else if (x>3 && b==0) F=(x-a)/(x-c);
+            else F=x/c;
+            cout << "x = " << x << "\tf = " << F << endl;
+        }
+    }
 return 0;
 }
+
