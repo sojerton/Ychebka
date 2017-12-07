@@ -33,7 +33,7 @@ int main()
             if (sum==3) counter+=1;
         }
     }
-    cout <<"Ëîêàëüíûõ ìèíèìóìîâ: " << counter <<endl;
+    cout <<"Ğ›Ğ¾ĞºĞ°Ğ»ÑŒĞ½Ñ‹Ñ… Ğ¼Ğ¸Ğ½Ğ¸Ğ¼ÑƒĞ¼Ğ¾Ğ²: " << counter <<endl;
     cin.get();
 return 0;
 }
