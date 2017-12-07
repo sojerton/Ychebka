@@ -14,27 +14,27 @@ int main(){
     marsh route[SIZE];
     setlocale(LC_ALL,"Russian");
     for (int i=0; i<SIZE; i++){
-        cout << "Íà÷àëî ìàðøðóòà: ";
+        cout << "ÐÐ°Ñ‡Ð°Ð»Ð¾ Ð¼Ð°Ñ€ÑˆÑ€ÑƒÑ‚Ð°: ";
         cin.getline(route[i].Start, 30);
-        cout << "Êîíåö ìàðøðóòà: ";
+        cout << "ÐšÐ¾Ð½ÐµÑ† Ð¼Ð°Ñ€ÑˆÑ€ÑƒÑ‚Ð°: ";
         cin.getline(route[i].Fin, 30);
-        cout << "   Íîìåð ìàðøðóòà: ";
+        cout << "   ÐÐ¾Ð¼ÐµÑ€ Ð¼Ð°Ñ€ÑˆÑ€ÑƒÑ‚Ð°: ";
         cin >> route[i].Num;
         cout << endl;
         cin.get();
     }
 int num;
-    cout << "Ââåäèòå íîìåð ìàðøðóòà: ";
+    cout << "Ð’Ð²ÐµÐ´Ð¸Ñ‚Ðµ Ð½Ð¾Ð¼ÐµÑ€ Ð¼Ð°Ñ€ÑˆÑ€ÑƒÑ‚Ð°: ";
     cin >> num;
     int  z=0;
     for (int i=0; i<SIZE; i++){
         if (route[i].Num==num){
         z=1;
-        cout << "Íà÷àëî ìàðøðóòà: " << route[i].Start <<endl;
-        cout << "Êîíåö ìàðøðóòà: " <<route[i].Fin << endl;
+        cout << "ÐÐ°Ñ‡Ð°Ð»Ð¾ Ð¼Ð°Ñ€ÑˆÑ€ÑƒÑ‚Ð°: " << route[i].Start <<endl;
+        cout << "ÐšÐ¾Ð½ÐµÑ† Ð¼Ð°Ñ€ÑˆÑ€ÑƒÑ‚Ð°: " <<route[i].Fin << endl;
     break;
     }}
-    if (z==0) cout << "Äàííîãî ìàðøðóòà íå ñóùåñòâóåò." << endl;
+    if (z==0) cout << "Ð”Ð°Ð½Ð½Ð¾Ð³Ð¾ Ð¼Ð°Ñ€ÑˆÑ€ÑƒÑ‚Ð° Ð½Ðµ ÑÑƒÑ‰ÐµÑÑ‚Ð²ÑƒÐµÑ‚." << endl;
 	cin.get();
 	return 0;
 }
