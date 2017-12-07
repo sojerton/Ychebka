@@ -7,12 +7,12 @@ int main()
 {
     setlocale(LC_ALL, "Russian");
     double a,b,c,dX,Xn,Xk;
-cout << "zadaite minim-e zna4enie, vvedite Xn= "; cin >> Xn;;
-cout << "zadaite maxim-e zna4enie, vvedite Xk= "; cin >> Xk;
-cout << "zadaite shag (dX) = "; cin >> dX;
-cout << "vvedite a="; cin >> a;
-cout << "vvedite b="; cin >> b;
-cout << "vvedite c="; cin >> c;
+cout << "задайте минимальное значение, введите Xn= "; cin >> Xn;;
+cout << "задайте максимальное значение, введите Xk= "; cin >> Xk;
+cout << "задайте шаг (dX) = "; cin >> dX;
+cout << "введите a="; cin >> a;
+cout << "введите b="; cin >> b;
+cout << "введите c="; cin >> c;
     if (!( int(a) | int(b)) && ( int(a) ^ int(c)) !=0) {
         for( double x=Xn;x<=Xk;x=x+dX){
             double F;
