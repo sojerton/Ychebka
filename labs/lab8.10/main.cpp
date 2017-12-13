@@ -10,10 +10,6 @@ struct catalog {
     struct dataInf{int day, month, year;
     } data;
     int num;
-    bool operator<(catalog in2)
-{
-   return (num < in2.num);
-}
 };
 
 #define SIZE 3
