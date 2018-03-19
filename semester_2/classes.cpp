@@ -13,8 +13,7 @@ class Car
 private:
     bool typeFuel;
 public:
-    int Lenght;
-    Car():typeFuel(true), Lenght(427){}
+    Car():typeFuel(true){}
     Car(bool a):typeFuel(a){}
     Car(const Car &other){this->typeFuel=other.typeFuel;} // конструктор копирования
     void showType(){if(typeFuel)cout<<benzine_2<<endl;
@@ -27,8 +26,9 @@ class passengerCars : virtual public Car
 public:
     int power;
     int maxSpeed;
+    int Lenght;
     passengerCars():power(210), maxSpeed(190){}
-    passengerCars(int a, int b):power(a), maxSpeed(b){}
+    passengerCars(int a, int b, int c):power(a), maxSpeed(b), Lenght(c){}
     void  showPower(){cout<<"Power of engine: "<< power <<" l.s."<<endl;}
     void  showSpeed(){cout<<"Maximal Speed of car is: "<<maxSpeed<<endl;}
     ~passengerCars(){}
@@ -40,8 +40,8 @@ public:
     friend passengerCars;
     int CCapacity;
     int Tlenght;
-    trucks():CCapacity(13), Tlenght(442){}
-    trucks(bool a, int b):Car(a), CCapacity(b){}
+    trucks():CCapacity(13), Tlenght(123){}
+    trucks(bool a, int b, int c):Car(a), CCapacity(b), Tlenght(c){}
     void showCC(){cout<<"Carrying capacity is: "<<CCapacity<<" tons"<<endl;}
     class bus : public Car
     {
@@ -76,12 +76,12 @@ int main()
 {
     setlocale(0, "rus");
 
-    passengerCars VAZ;
+    passengerCars VAZ(210, 190, 467);
     VAZ.showType();
     VAZ.showPower();
     VAZ.showSpeed();
     cout<<endl;
-    trucks KAMAZ(false, 18);
+    trucks KAMAZ(false, 18, 123);
     KAMAZ.showType();
     KAMAZ.showCC();
     cout<<endl;
@@ -92,11 +92,7 @@ int main()
     trailer vaz(VAZ.Lenght);
     trailer TR(KAMAZ.Tlenght);
     trailer VAZtr = TR + vaz;
-
     VAZtr.showSize();
-
-
-
 
     return 0;
 }
