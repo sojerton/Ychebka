@@ -39,7 +39,8 @@ class trucks : virtual public Car
 public:
     friend passengerCars;
     int CCapacity;
-    trucks():CCapacity(13){}
+    int Tlenght;
+    trucks():CCapacity(13), Tlenght(442){}
     trucks(bool a, int b):Car(a), CCapacity(b){}
     void showCC(){cout<<"Carrying capacity is: "<<CCapacity<<" tons"<<endl;}
     class bus : public Car
@@ -58,17 +59,17 @@ public:
 class trailer: public Car, public trucks
 {
 public:
-    int fullLenght;
+    int fullLenght=281;
     trailer():fullLenght(281){}
     trailer(int a):fullLenght(a){}
+    friend trailer operator+ (trailer&l, trailer& r);
     void showSize(){cout<<"Full Lenght auto is: "<<fullLenght<<" sm"<<endl;}
-    friend trailer operator+ (trailer&l, Car& u1);
     ~trailer(){}
 };
 
-trailer operator+ (trailer&l, Car& u1)//перегрузка оператора- для боя
+trailer operator+ (trailer&l, trailer& r)
     {
-        return trailer (l.fullLenght+u1.Lenght);
+        return trailer (l.fullLenght+r.fullLenght);
     }
 
 int main()
@@ -88,15 +89,9 @@ int main()
     LIAZ.showType();
     LIAZ.showHC();
     cout<<endl;
-    trailer vaz;
-    trailer TR;
-    trailer VAZtr;
-    vaz.showType();
-    vaz.showSize();
-    vaz.showCC();
-
-
-    VAZtr = TR + vaz;
+    trailer vaz(VAZ.Lenght);
+    trailer TR(KAMAZ.Tlenght);
+    trailer VAZtr = TR + vaz;
 
     VAZtr.showSize();
 
