@@ -2,24 +2,24 @@
 #include <string>
 using namespace std;
 int main() {
-	string str, bukvi;
-	int k = 0, out = 0;
+	string str, bukvi;	//общая строка и выходная строка
+	int k = 0, out = 0; //k - цифра стоящая перед буквой, out - счетчик выходной строки 
 	cin >> str;
-	for (int i = 0; i < str.length(); i++) {
-		if (str[i] > 47 && str[i] < 58) { k = k * 10 + (str[i] - 48); }
-		if (str[i] > 64 && str[i] < 91) {
-			if (k == 0) {
+	for (int i = 0; i < str.length(); i++) { //в цикле от нуля до конца строки
+		if (str[i] > 47 && str[i] < 58) { k = k * 10 + (str[i] - 48); } //если это цифра 0-9 то записываем в отдельную переменную(если вторая тоже цифра то *10)
+		if (str[i] > 64 && str[i] < 91) { //если числовой код = английским заглавным буквам
+			if (k == 0) { //если цифры не было просто записываем в конец строки букву
 				bukvi.insert(bukvi.end(), str[i]);
 			}
-			if (k != 0) {
+			if (k != 0) { //если было цифровое значение, то указываем сколько копий нужно вставить в конец
 				bukvi.insert(bukvi.end(), k, str[i]);
-				k = 0;
+				k = 0; // и обнуляем цифру
 			}
 		}
 	}
-	for (int i = 0; i < bukvi.length(); i++) {
-		out++;
-		if (out != 40)
+	for (int i = 0; i < bukvi.length(); i++) { // вывод всей строки
+		out++; //считаем длину выведенной строки
+		if (out != 40)  //при 40 переходим на новую строчку
 			cout << bukvi[i];
 		else {
 			cout << bukvi[i] << endl; out = 0;
